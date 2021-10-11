@@ -177,7 +177,10 @@ To start, visit https://flutter.dev/. This portal is the source of truth for any
 
 1 - A computer. You can develop Flutter apps on Windows, macOS, Linux or ChromeOS. However, Xcode only runs on macOS, making a Mac necessary to build and deploy apps for iOS.
 
-`Note: Because of the Xcode limitation for macOS, this book uses the Flutter toolchain on Mac. You can follow along on any platform of your choice — just skip any iOS- or Mac-specific steps.`
+```
+Note: Because of the Xcode limitation for macOS, this book uses the Flutter toolchain on Mac. 
+You can follow along on any platform of your choice — just skip any iOS- or Mac-specific steps.
+```
 
 2 - The Flutter SDK.
 
@@ -187,3 +190,96 @@ To start, visit https://flutter.dev/. This portal is the source of truth for any
 
 5 - Developer accounts (optional). To deploy to the Apple App Store or Google Play Store, you’ll need a valid account on each.
 
+# Getting the Flutter SDK
+
+The first step is to download the SDK. You can follow the steps on **flutter.dev** or jump right in here: https://flutter.dev/docs/development/tools/sdk/releases
+
+One thing to note is that Flutter organizes its SDK around **channels**, which are different development branches. New features or platform support will be available first on a **beta channel** for developers to try out. This is a great way to get early access to certain features like new platforms or native SDK support.
+
+For this book and development in general, use the **stable channel**. That branch has been vetted and tested and has little chance of breaking.
+
+Follow the instructions to download the SDK from https://flutter.dev/docs/get-started/install/macos#get-sdk. Installation is as simple as unarchiving and putting the bin folder in your path.
+
+Once you do that, you’ll have access to the Flutter command-line app, which is your starting point. To check you’ve set it up correctly, run the following command in a terminal:
+
+```shell
+flutter help
+```
+
+In response, you should see the main help instructions:
+
+```shell
+Manage your Flutter app development.
+
+Common commands:
+
+  flutter create <output directory>
+    Create a new Flutter project in the specified directory.
+
+  flutter run [options]
+    Run your Flutter application on an attached device or in an emulator.
+
+Usage: flutter <command> [arguments]
+...
+```
+
+These `flutter` subcommands are a gateway to all the tools that come with Flutter. You’ll see project management tools, package management tools and tools to run and test your apps. You’ll dive into many of these in this and future chapters.
+
+# Getting everything else
+
+In addition to the Flutter SDKs, you’ll need Java, the Android SDK, the iOS SDKs and an IDE with Flutter extensions. To make this process easier, Flutter includes the **Flutter Doctor**, which guides you through installing all the missing tools.
+
+Just run:
+
+```shell
+flutter doctor
+```
+
+That checks for all the necessary components and provides the links or instructions to download ones you’re missing.
+
+Here’s an example:
+
+```shell
+Doctor summary (to see all details, run flutter doctor -v):
+[✓] Flutter (Channel stable, 2.5.1, on macOS 11.5 20G71 darwin-x64, locale en-US)
+[✗] Android toolchain - develop for Android devices
+    ✗ Flutter requires Android SDK 30 and the Android BuildTools 30.0.2
+      To update using sdkmanager, run:
+        "/Users/michael/Library/Android/sdk/tools/bin/sdkmanager"
+        "platforms;android-30" "build-tools;30.0.2"
+      or visit https://flutter.dev/docs/get-started/install/macos
+      for detailed instructions.
+[!] Xcode - develop for iOS and macOS (Xcode 12.5.1)
+    ✗ CocoaPods not installed.
+        CocoaPods is used to retrieve the iOS platform side's plugin
+        code that responds to your plugin usage on the Dart side.
+        Without CocoaPods, plugins will not work on iOS or macOS.
+        For more info, see https://flutter.dev/platform-plugins
+      To install:
+        sudo gem install cocoapods
+[✗] Chrome - develop for the web (Cannot find Chrome executable at
+    /Applications/Google Chrome.app/Contents/MacOS/Google Chrome)
+    ! Cannot find Chrome. Try setting CHROME_EXECUTABLE to a Chrome executable.
+[!] Android Studio (not installed)
+
+[☠] Connected device (the doctor check crashed)
+    ✗ Due to an error, the doctor check did not complete. If the error message below is not helpful, please let us know
+      about this issue at https://github.com/flutter/flutter/issues.
+    ✗ Exception: Unable to run "adb", check your Android SDK installation and ANDROID_HOME environment variable:
+      /Users/michael/Library/Android/sdk/platform-tools/adb
+
+! Doctor found issues in 4 categories.
+
+```
+
+In this example output, Flutter Doctor has identified a series of issues: mainly, no Java, an outdated Android toolchain and that CocoaPods, Android Studio and Google Chrome are missing.
+
+The tool has helpfully suggested commands and links to get the missing dependencies. The tool also terminated before completing, which is common if it doesn’t find major dependencies.
+
+For your specific setup, follow the suggestions to install whatever you’re missing. Then keep running `flutter doctor` until you get all green checkmarks. You’ll likely have to run it more than a couple of times to clear all the issues.
+
+```
+Note: If Flutter Doctors suggestions dont work, you may have to manually install missing tools, 
+like Java or Android Studio, by following the instructions on their respective websites. 
+Just take it one step at a time. Setting up the development environment is the hardest part of working with Flutter.
+```
