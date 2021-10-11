@@ -130,3 +130,60 @@ Flutter has a modular, layered architecture. This allows you to write your appli
 
 ![img4](E:\RepositoriosFlutter\flutter-apprentice\LessonsBook\Images\img4.png)
 
+The Flutter architecture consists of three main layers:
+
+1 - The Framework layer is written in Dart and contains the high-level libraries that you’ll use directly to build apps. This includes the UI theme, widgets, layout and animations, gestures and foundational building blocks. Alongside the main Flutter framework are plugins: high-level features like JSON serialization, geolocation, camera access, in-app payments and so on. This plugin-based architecture lets you include only the features your app needs.
+
+2 - The Engine layer contains the core C++ libraries that make up the primitives that support Flutter apps. The engine implements the low-level primitives of the Flutter API, such as I/O, graphics, text layout, accessibility, the plugin architecture and the Dart runtime. The engine is also responsible for rasterizing Flutter scenes for fast rendering onscreen.
+
+3 - The Embedder is different for each target platform and handles packaging the code as a stand-alone app or embedded module.
+
+Each of the architecture layers is made up of other sublayers and modules, making them almost fractal. Of particular import to general app development is the makeup of the framework layer:
+
+![img5](E:\RepositoriosFlutter\flutter-apprentice\LessonsBook\Images\img5.png)
+
+The Flutter framework consists of several sublayers:
+
+° At the top is the UI theme, which uses either the Material (Android) or Cupertino (iOS) design language. This affects how the controls appear, allowing you to make your app look just like a native one.
+
+° The widget layer is where you’ll spend the bulk of your UI programming time. This is where you compose design and interactive elements to make up the app.
+
+° Beneath the widgets layer is the rendering layer, which is the abstraction for building a layout.
+
+° The foundation layer provides basic building blocks, like animations and gestures, that build up the higher layers.
+
+# What’s ahead
+
+This book is divided into five sections:
+
+° Section 1 is the introduction. You’re here! In this section, you’ll get an overview of Flutter, learn how to get started and make sure you have everything set up to develop great apps. You’ll build a simple app to get a taste of the Dart language and Flutter SDKs.
+
+° Section 2 is all about widgets, the building blocks you use to make your app.
+
+° Section 3 covers navigation and deep links. If you think about widgets as making up screens, navigation ties them together to let the user accomplish various tasks within the app.
+
+° Section 4 goes over state and data. You’ll learn how to save data and work with local persistence and networking.
+
+° Section 5 shows you how to make the app work with native platforms as well as how to deploy your app.
+
+° By the end of the book, you’ll be able to take an idea, turn it into a great-looking multi-platform app and submit it for publication.
+
+# Getting started
+Now that you’ve decided Flutter is right for you, your next step is to get the tools necessary to build Flutter apps: the Flutter SDK and Dart compiler. You’ll also need an IDE with a Flutter plugin along with the tools to build and deploy for the various platforms. The latter means Xcode for iOS and Android Studio for Android.
+
+To start, visit https://flutter.dev/. This portal is the source of truth for any installation instructions or API changes that occur between this book’s publication and the time you read it. If there are any contradictions, the information at **flutter.dev** supersedes.
+
+# What you need
+
+1 - A computer. You can develop Flutter apps on Windows, macOS, Linux or ChromeOS. However, Xcode only runs on macOS, making a Mac necessary to build and deploy apps for iOS.
+
+`Note: Because of the Xcode limitation for macOS, this book uses the Flutter toolchain on Mac. You can follow along on any platform of your choice — just skip any iOS- or Mac-specific steps.`
+
+2 - The Flutter SDK.
+
+3 - An editor, such as Android Studio or Visual Studio Code.
+
+4 - At least one device. You can run in an iOS Simulator or Android emulator, but running Flutter apps on a physical device will give you the true user experience.
+
+5 - Developer accounts (optional). To deploy to the Apple App Store or Google Play Store, you’ll need a valid account on each.
+
