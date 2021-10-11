@@ -361,13 +361,13 @@ Next, change the string to: **‘Thou hast pushed the button this many times:’
 
 Here’s the not-so-tricky part: Just save the file. Now, look at the running app and observe the change.
 
-![img15]()
+![img15](https://github.com/CarlosViniMSouza/Book_Flutter_Apprentice/blob/master/LessonsBook/Images/img15.png)
 
 _Et voila_! Your changes reload without stopping the app and redeploying.
 
 Sometimes, saving the file does not automatically trigger the hot reload. In that case, just press the Hot Reload icon, which looks like a lightning bolt, in the toolbar.
 
-![img16]()
+![img16](https://github.com/CarlosViniMSouza/Book_Flutter_Apprentice/blob/master/LessonsBook/Images/img16.png)
 
 # Key points
 
