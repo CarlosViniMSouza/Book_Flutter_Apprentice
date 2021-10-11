@@ -13,7 +13,7 @@ This book assumes you’re familiar with development for a native mobile platfor
 
 In the simplest terms, Flutter is a software development toolkit from Google for building cross-platform apps. Flutter apps consist of a series of packages, plugins and widgets — but that’s not all. Flutter is a process, a philosophy and a community as well.
 
-It’s also the easiest way to get an app up and running on any one platform, let alone multiple. You can be more productive than you thought possible thanks to Flutter’s declarative, widget-based UI structure, first-class support for reactive programming, cross platform abstractions and its virtual machine that allows for hot reloading of code changes.
+It’s also the easiest way to get an app up and running on any one platform, let alone multiple. You can be more productive than you thought possible thanks to Flutter’s declarative, widget-based UI structure, first-class support for reactive programming, cross-platform abstractions and its virtual machine that allows for hot reloading of code changes.
 
 ![img1.5](E:\RepositoriosFlutter\flutter-apprentice\LessonsBook\Images\img1_2.png)
 
@@ -67,7 +67,7 @@ Here’s just a sample of some great things about using Flutter:
 
 ° The sheer number of widgets and the declarative syntax for building UIs lets you be extremely productive, building a rich app quickly with minimal overhead and boilerplate. Stateful widgets are bound to data and automatically update as the data model changes.
 
-° If you’ve used SwiftUI or Jetpack Compose recently, you’re already familiar with many of Flutter’s concepts. But Flutter is even better — it has fewer limitations on the tools and you can build for multiple platforms at once.
+° If you’ve used SwiftUI or Jetpack Compose recently, you’re already familiar with many of Flutter’s concepts. But Flutter is even better — it has fewer limitations on the tools, and you can build for multiple platforms at once.
 
 ° Flutter was designed with **accessibility** in mind, with out-of-the-box support for dynamic font sizes and screen readers and a ton of best practices around language, contrast and interaction methods.
 
@@ -77,7 +77,7 @@ Here’s just a sample of some great things about using Flutter:
 
 If you’re not yet convinced that there’s a place for Flutter, check out the showcase: https://flutter.dev/showcase.
 
-There, you see the top companies using Flutter and how diverse the apps you can make with it are. These aren’t limited to “JSON-in-a-table” apps, but also include media-rich dynamic and interactive apps.
+There, you see the top companies using Flutter and how diverse the apps you can make with it are. These are not limited to “JSON-in-a-table” apps, but also include media-rich dynamic and interactive apps.
 
 These apps help you be more productive, better informed, communicate more easily and have more fun. Flutter’s native performance and system integrations make it a better choice than a web or hybrid app for most mobile applications.
 
@@ -102,25 +102,25 @@ Flutter isn’t the best tool for every application. Here are some areas where F
 
 While you can create simple 2D games using Flutter, for complex 2D and 3D games, you’d probably prefer to base your app on a cross-platform game engine technology like Unity or Unreal. They have more domain-specific features like physics, sprite and asset management, game state management, multiplayer support and so on.
 
-Flutter doesn’t have a sophisticated audio engine yet, so audio editing or mixing apps are at a disadvantage over those that are purpose-built for a specific platform.
+Flutter doesn't’t have a sophisticated audio engine yet, so audio editing or mixing apps are at a disadvantage over those that are purpose-built for a specific platform.
 
 ### Apps with specific native SDK needs
 
-Flutter supports many, but not all, native features. Fortunately, you can usually create bridges to platform-specific code. However, if the app is highly integrated with a device’s features and platform SDKs, it might be worth writing the app using the platform-specific tools. Flutter also produces app binaries that are bigger in size than those built with platform frameworks.
+Flutter supports many, but not all, native features. Fortunately, you can usually create bridges to platform-specific code. However, if the app is highly integrated with a device’s features and platform SDKs, it might be worth writing the app using the platform-specific tools. Flutter also produces app binaries that are bigger than those built with platform frameworks.
 
-Flutter might not be a practical choice if you are only interested in a single platform app and you have deep knowledge of that platform’s tools and languages. For example, if you’re working with a highly-customized iOS app based on CloudKit that uses all the native hardware, MLKit, StoreKit, extensions and so on, maintaining and taking advantage of those features will be easier using SwiftUI. Of course, the same goes for a heavily-biased Android app using Jetpack Compose.
+Flutter might not be a practical choice if you are only interested in a single platform app, and you have deep knowledge of that platform’s tools and languages. For example, if you’re working with a highly-customized iOS app based on CloudKit that uses all the native hardware, MLKit, StoreKit, extensions and so on, maintaining and taking advantage of those features will be easier using SwiftUI. Of course, the same goes for a heavily-biased Android app using Jetpack Compose.
 
 ### Certain platforms
 
-Flutter doesn’t run everywhere. It doesn’t support Apple Bitcode yet, which means that it doesn’t support watchOS, tvOS or certain iOS app extensions. Its support for the web is still in its early days, which means that Flutter has many features and performance improvements ahead of it — but they’re coming.
+Flutter doesn't’t run everywhere. It doesn't’t support Apple Bitcode yet, which means that it doesn't’t support watchOS, tvOS or certain iOS app extensions. It's support for the web is still in its early days, which means that Flutter has many features and performance improvements ahead of it — but they’re coming.
 
-Since Flutter doesn’t run on watches or TVs yet, you’ll have to build those components natively and attach them to a Flutter-based mobile app. Depending on how sophisticated those other apps are, it might not be worth the hassle to write both native and Flutter code.
+Since Flutter doesn't’t run on watches or TVs yet, you’ll have to build those components natively and attach them to a Flutter-based mobile app. Depending on how sophisticated those other apps are, it might not be worth the hassle to write both native and Flutter code.
 
 # Flutter’s history
 
 Flutter comes from a tradition of trying to improve web performance. It’s built on top of several open-source technologies developed at Google to bring native performance and modern programming to the web through Chrome.
 
-The Flutter team chose the Dart language, which Google also developed, for its productivity enhancements. Its object-oriented type system and support for reactive and asynchronous programming give it clear advantages over Javascript. Most importantly, Google built the Dart VM into the Chrome browser, allowing web apps written in Dart to run at native speeds.
+The Flutter team chose the Dart language, which Google also developed, for its productivity enhancements. Its object-oriented type system and support for reactive and asynchronous programming give it is clear advantages over Javascript. Most importantly, Google built the Dart VM into the Chrome browser, allowing web apps written in Dart to run at native speeds.
 
 Another piece of the puzzle is the inclusion of Skia as the graphics rendering layer. Skia is another Google-based open source project that powers the graphics on Android, Chrome browsers, Chrome OS and Firefox. It runs directly on the GPU using Vulcan on Android and Metal on iOS, making the graphics layer fast on mobile devices. Its API allows Flutter widgets to render quickly and consistently, regardless of the host platform.
 
@@ -134,15 +134,15 @@ The Flutter architecture consists of three main layers:
 
 1 - The Framework layer is written in Dart and contains the high-level libraries that you’ll use directly to build apps. This includes the UI theme, widgets, layout and animations, gestures and foundational building blocks. Alongside the main Flutter framework are plugins: high-level features like JSON serialization, geolocation, camera access, in-app payments and so on. This plugin-based architecture lets you include only the features your app needs.
 
-2 - The Engine layer contains the core C++ libraries that make up the primitives that support Flutter apps. The engine implements the low-level primitives of the Flutter API, such as I/O, graphics, text layout, accessibility, the plugin architecture and the Dart runtime. The engine is also responsible for rasterizing Flutter scenes for fast rendering onscreen.
+2 - The Engine layer contains the core C++ libraries that make up the primitives that support Flutter apps. The engine implements the low-level primitives of the Flutter API, such as I/O, graphics, text layout, accessibility, the plugin architecture and the Dart runtime. The engine is also responsible for mastering Flutter scenes for fast rendering onscreen.
 
 3 - The Embedder is different for each target platform and handles packaging the code as a stand-alone app or embedded module.
 
-Each of the architecture layers is made up of other sublayers and modules, making them almost fractal. Of particular import to general app development is the makeup of the framework layer:
+Each of the architecture layers is made up of other sub-layers and modules, making them almost fractal. Of particular import to general app development is the makeup of the framework layer:
 
 ![img5](E:\RepositoriosFlutter\flutter-apprentice\LessonsBook\Images\img5.png)
 
-The Flutter framework consists of several sublayers:
+The Flutter framework consists of several sub-layers:
 
 ° At the top is the UI theme, which uses either the Material (Android) or Cupertino (iOS) design language. This affects how the controls appear, allowing you to make your app look just like a native one.
 
@@ -158,7 +158,7 @@ This book is divided into five sections:
 
 ° Section 1 is the introduction. You’re here! In this section, you’ll get an overview of Flutter, learn how to get started and make sure you have everything set up to develop great apps. You’ll build a simple app to get a taste of the Dart language and Flutter SDKs.
 
-° Section 2 is all about widgets, the building blocks you use to make your app.
+° Section 2 is all about widgets, the building blocks you used to make your app.
 
 ° Section 3 covers navigation and deep links. If you think about widgets as making up screens, navigation ties them together to let the user accomplish various tasks within the app.
 
@@ -198,7 +198,7 @@ One thing to note is that Flutter organizes its SDK around **channels**, which a
 
 For this book and development in general, use the **stable channel**. That branch has been vetted and tested and has little chance of breaking.
 
-Follow the instructions to download the SDK from https://flutter.dev/docs/get-started/install/macos#get-sdk. Installation is as simple as unarchiving and putting the bin folder in your path.
+Follow the instructions to download the SDK from https://flutter.dev/docs/get-started/install/macos#get-sdk. Installation is as simple as archiving and putting the bin folder in your path.
 
 Once you do that, you’ll have access to the Flutter command-line app, which is your starting point. To check you’ve set it up correctly, run the following command in a terminal:
 
@@ -274,7 +274,7 @@ Doctor summary (to see all details, run flutter doctor -v):
 
 In this example output, Flutter Doctor has identified a series of issues: mainly, no Java, an outdated Android toolchain and that CocoaPods, Android Studio and Google Chrome are missing.
 
-The tool has helpfully suggested commands and links to get the missing dependencies. The tool also terminated before completing, which is common if it doesn’t find major dependencies.
+The tool has helpfully suggested commands and links to get the missing dependencies. The tool also terminated before completing, which is common if it doesn't’t find major dependencies.
 
 For your specific setup, follow the suggestions to install whatever you’re missing. Then keep running `flutter doctor` until you get all green checkmarks. You’ll likely have to run it more than a couple of times to clear all the issues.
 
@@ -283,3 +283,39 @@ Note: If Flutter Doctors suggestions dont work, you may have to manually install
 like Java or Android Studio, by following the instructions on their respective websites. 
 Just take it one step at a time. Setting up the development environment is the hardest part of working with Flutter.
 ```
+
+# Setting up an IDE
+
+The Flutter team officially supports three editors: Android Studio, Visual Studio Code and Emacs. However, there are many other editors that support the Dart language, work with the Flutter command line or have third-party Flutter plugins.
+
+This book’s examples use Android Studio, but the code and examples will all work in your editor of choice. Flutter Doctor will have you install this IDE anyway, to get all the Android tools, so using Android Studio keeps you from having to install additional editors. Additionally, Flutter Doctor will tell you to install the Android Studio Flutter plugin, which also triggers an installation of the **Dart plugin** for Android Studio.
+
+Once you go through all of the `flutter doctor` steps, you’ll have everything you need to create Flutter apps in Android studio. If you see **Create New Flutter project** in the Android Studio welcome window, you’re good to go.
+
+![img6](E:\RepositoriosFlutter\flutter-apprentice\LessonsBook\Images\img6.png)
+
+# Trying it out
+
+Downloading all the components is the hardest part of getting a Flutter app up and running. Next, you’ll try actually building an app.
+
+There are two recommended ways to create a new project: with the IDE or through the `flutter` command-line tool in a terminal. In this chapter, you’ll use the IDE shortcut and in the next chapter, you’ll use the command line.
+
+In Android Studio, click the **Create New Flutter Project** option. Leave the default app selected and click the Next button to continue to the next screen.
+
+For this example, you can keep the default values or change them to something more convenient. Click the **Next** button to continue.
+
+![img7](E:\RepositoriosFlutter\flutter-apprentice\LessonsBook\Images\img7.png)
+
+The options here let you include platform support or change the package name. You’ll learn more about these options later. For now, click the Finish button.
+
+![img8](E:\RepositoriosFlutter\flutter-apprentice\LessonsBook\Images\img8.png)
+
+If you use Visual Studio Code, the process is similar. To create a new project, use **View ▸ Command Palette… ▸ Flutter: New Project**. After that, click through the project form that comes up.
+
+![img9](E:\RepositoriosFlutter\flutter-apprentice\LessonsBook\Images\img9.png)
+
+With either editor, you might see pop-ups or messages to download or update various tools and components. Follow the directions until you resolve the messages.
+
+For example, this Android Studio banner shows: ‘**Pub get’ has not been run**. Clicking **Get dependencies** resolves this.
+
+![img10](E:\RepositoriosFlutter\flutter-apprentice\LessonsBook\Images\img10.png)
