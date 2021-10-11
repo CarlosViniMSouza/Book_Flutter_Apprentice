@@ -319,3 +319,27 @@ With either editor, you might see pop-ups or messages to download or update vari
 For example, this Android Studio banner shows: ‘**Pub get’ has not been run**. Clicking **Get dependencies** resolves this.
 
 ![img10](https://github.com/CarlosViniMSouza/Book_Flutter_Apprentice/blob/master/LessonsBook/Images/img10.png)
+
+# The template project
+
+The default new project is the same in either editor. It’s a simple Flutter demo. The demo app counts the number of times you tap a button.
+
+To give it a try, select a connected device, an iOS simulator or an Android emulator.
+
+![img11]()
+
+Launch the app by clicking the **Run** icon:
+
+![img12]()
+
+It might take a while to compile and launch the first time. When you’re done, you’ll see the following:
+
+![img13]()
+
+Congratulations, you’ve made your first Flutter app! Click the button and see the increment response update the label.
+
+![img14]()
+
+All the code for this app is in lib\main.dart in the default project. Feel free to take a look at it.
+
+Throughout the rest of this book, you’ll dive into Flutter apps, widgets, state, themes and many other concepts that will help you build beautiful apps.
