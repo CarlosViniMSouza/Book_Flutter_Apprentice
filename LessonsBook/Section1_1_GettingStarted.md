@@ -343,3 +343,51 @@ Congratulations, you’ve made your first Flutter app! Click the button and see 
 All the code for this app is in lib\main.dart in the default project. Feel free to take a look at it.
 
 Throughout the rest of this book, you’ll dive into Flutter apps, widgets, state, themes and many other concepts that will help you build beautiful apps.
+
+# Bonus: Try hot reload
+
+You’ll learn a lot more about hot reload in future chapters, but it’s just too cool of a feature to not indulge in a little taste at this point. Before starting, adjust your IDE window so you can see both it and the simulator or emulator with your app running in it.
+
+In **main.dart**, find the following `Text` widget:
+
+```shell
+Text(
+  'You have pushed the button this many times:',
+),
+
+```
+
+Next, change the string to: **‘Thou hast pushed the button this many times:’** to give it a faux-medieval flair.
+
+Here’s the not-so-tricky part: Just save the file. Now, look at the running app and observe the change.
+
+![img15]()
+
+_Et voila_! Your changes reload without stopping the app and redeploying.
+
+Sometimes, saving the file does not automatically trigger the hot reload. In that case, just press the Hot Reload icon, which looks like a lightning bolt, in the toolbar.
+
+![img16]()
+
+# Key points
+
+° Flutter is a **software development toolkit** from Google for building cross-platform apps using the Dart programming language.
+
+° With Flutter, you can build a **high-quality** app that’s performant and looks great, very quickly.
+
+° Flutter is for both **new** and **experienced developers** who want to start a mobile app with minimal overhead.
+
+° Install the **Flutter SDK** and associated tools using instructions found at https://flutter.dev.
+
+° The `flutter doctor` command helps you install and update your Flutter tools.
+
+° This book will mostly use **Android Studio** as the IDE for Flutter development.
+
+# Where to go from here?
+Your home for all things Flutter is **flutter.dev** (and **dart.dev** for the Dart language). If you get stuck at any of the installation steps, go there for updated instructions.
+
+**flutter.dev** contains the official documentation and reference pages, which you can find at https://flutter.dev/docs. These will be your source for complete and up-to-date information about the SDKs.
+
+Also, there’s https://flutter.dev/community, which has links to all the official Flutter communities on multiple social media platforms. In particular, check out the Google Developers’ Flutter YouTube channel: https://www.youtube.com/c/flutterdev/.
+
+Finally, available on raywenderlich.com is _The Dart Apprentice_, a companion book to learn more about Dart. For a quick start, check out this free **Dart Basics** article https://www.raywenderlich.com/4482551-dart-basics or the video course **Programming in Dart: Fundamentals**, available at https://www.raywenderlich.com/4921688-programming-in-dart-fundamentals.
