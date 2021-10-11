@@ -7,7 +7,7 @@ The five sections of this book will progressively teach you how to create an app
 
 This book assumes you’re familiar with development for a native mobile platform, such as iOS with Swift or Android with Kotlin… but you don’t need to be an expert by any means. These chapters will show you how to build a Flutter app from scratch, so if you’re completely new, you’ll catch up just fine.
 
-![img1](E:\RepositoriosFlutter\flutter-apprentice\LessonsBook\Images\img1.png)
+![img1](https://github.com/CarlosViniMSouza/Book_Flutter_Apprentice/blob/master/LessonsBook/Images/img1.png)
 
 # What is Flutter?
 
@@ -15,7 +15,7 @@ In the simplest terms, Flutter is a software development toolkit from Google for
 
 It’s also the easiest way to get an app up and running on any one platform, let alone multiple. You can be more productive than you thought possible thanks to Flutter’s declarative, widget-based UI structure, first-class support for reactive programming, cross-platform abstractions and its virtual machine that allows for hot reloading of code changes.
 
-![img1.5](E:\RepositoriosFlutter\flutter-apprentice\LessonsBook\Images\img1_2.png)
+![img1.5](https://github.com/CarlosViniMSouza/Book_Flutter_Apprentice/blob/master/LessonsBook/Images/img1_2.png)
 
 One thing Flutter is not is a language. Flutter uses Dart as its programming language. If you know Kotlin, Swift, Java or Typescript, you’ll find Dart familiar, since it’s an object-oriented C-style language.
 
@@ -37,7 +37,7 @@ In contrast, Flutter’s widgets exist parallel to native widgets due to its cus
 
 # Who’s Flutter for?
 
-![img2](E:\RepositoriosFlutter\flutter-apprentice\LessonsBook\Images\img2.png)
+![img2](https://github.com/CarlosViniMSouza/Book_Flutter_Apprentice/blob/master/LessonsBook/Images/img2.png)
 
 Flutter is for both the new or experienced developer who wants to start a mobile app with minimal overhead. Flutter is for someone looking to make an app that runs on multiple devices, either right away or in the future. It’s for someone who prefers to build declarative UIs with the support of a large, open-source community.
 
@@ -92,7 +92,7 @@ Popular apps from some of the world’s biggest companies are built with Flutter
     -> Google Stadia
     -> Take a look at some recent examples:
 
-![img3](E:\RepositoriosFlutter\flutter-apprentice\LessonsBook\Images\img3.png)
+![img3](https://github.com/CarlosViniMSouza/Book_Flutter_Apprentice/blob/master/LessonsBook/Images/img3.png)
 
 # When not to use Flutter
 
@@ -128,7 +128,7 @@ Another piece of the puzzle is the inclusion of Skia as the graphics rendering l
 
 Flutter has a modular, layered architecture. This allows you to write your application logic once and have consistent behavior across platforms, even though the underlying engine code differs depending on the platform. The layered architecture also exposes different points for customization and overriding, as necessary.
 
-![img4](E:\RepositoriosFlutter\flutter-apprentice\LessonsBook\Images\img4.png)
+![img4](https://github.com/CarlosViniMSouza/Book_Flutter_Apprentice/blob/master/LessonsBook/Images/img4.png)
 
 The Flutter architecture consists of three main layers:
 
@@ -140,7 +140,7 @@ The Flutter architecture consists of three main layers:
 
 Each of the architecture layers is made up of other sub-layers and modules, making them almost fractal. Of particular import to general app development is the makeup of the framework layer:
 
-![img5](E:\RepositoriosFlutter\flutter-apprentice\LessonsBook\Images\img5.png)
+![img5](https://github.com/CarlosViniMSouza/Book_Flutter_Apprentice/blob/master/LessonsBook/Images/img5.png)
 
 The Flutter framework consists of several sub-layers:
 
@@ -292,7 +292,7 @@ This book’s examples use Android Studio, but the code and examples will all wo
 
 Once you go through all of the `flutter doctor` steps, you’ll have everything you need to create Flutter apps in Android studio. If you see **Create New Flutter project** in the Android Studio welcome window, you’re good to go.
 
-![img6](E:\RepositoriosFlutter\flutter-apprentice\LessonsBook\Images\img6.png)
+![img6](https://github.com/CarlosViniMSouza/Book_Flutter_Apprentice/blob/master/LessonsBook/Images/img6.png)
 
 # Trying it out
 
@@ -304,18 +304,18 @@ In Android Studio, click the **Create New Flutter Project** option. Leave the de
 
 For this example, you can keep the default values or change them to something more convenient. Click the **Next** button to continue.
 
-![img7](E:\RepositoriosFlutter\flutter-apprentice\LessonsBook\Images\img7.png)
+![img7](https://github.com/CarlosViniMSouza/Book_Flutter_Apprentice/blob/master/LessonsBook/Images/img7.png)
 
 The options here let you include platform support or change the package name. You’ll learn more about these options later. For now, click the Finish button.
 
-![img8](E:\RepositoriosFlutter\flutter-apprentice\LessonsBook\Images\img8.png)
+![img8](https://github.com/CarlosViniMSouza/Book_Flutter_Apprentice/blob/master/LessonsBook/Images/img8.png)
 
 If you use Visual Studio Code, the process is similar. To create a new project, use **View ▸ Command Palette… ▸ Flutter: New Project**. After that, click through the project form that comes up.
 
-![img9](E:\RepositoriosFlutter\flutter-apprentice\LessonsBook\Images\img9.png)
+![img9](https://github.com/CarlosViniMSouza/Book_Flutter_Apprentice/blob/master/LessonsBook/Images/img9.png)
 
 With either editor, you might see pop-ups or messages to download or update various tools and components. Follow the directions until you resolve the messages.
 
 For example, this Android Studio banner shows: ‘**Pub get’ has not been run**. Clicking **Get dependencies** resolves this.
 
-![img10](E:\RepositoriosFlutter\flutter-apprentice\LessonsBook\Images\img10.png)
+![img10](https://github.com/CarlosViniMSouza/Book_Flutter_Apprentice/blob/master/LessonsBook/Images/img10.png)
