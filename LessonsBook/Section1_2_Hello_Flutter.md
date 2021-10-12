@@ -164,3 +164,89 @@ A quick look at what this shows:
 One hot reload later, and you’re left with a clean app:
 
 ![img22](https://github.com/CarlosViniMSouza/Book_Flutter_Apprentice/blob/master/LessonsBook/Images/img22.png)
+
+# Building a recipe list
+
+An empty recipe app isn’t very useful. The app should have a nice list of recipes for the user to scroll through. Before you can display these, however, you need the data to fill out the UI.
+
+# Adding a data model
+
+You’ll use `Recipe` as the main data structure for recipes in this app.
+
+Create a new **Dart file** in the **lib** folder, named **recipe.dart**.
+
+Add the following class to the file:
+
+```dart
+class Recipe {
+  String label;
+  String imageUrl;
+  // TODO: Add servings and ingredients here
+
+  Recipe(
+    this.label,
+    this.imageUrl,
+  );
+  // TODO; Add List<Recipe> here
+}
+
+// TODO: Add Ingredient() here
+```
+
+This is the start of a `Recipe` model with a label and an image.
+
+You’ll also need to supply some data for the app to display. In a full-featured app, you’d load this data either from a local database or a JSON-based API. For the sake of simplicity as you get started with Flutter, however, you’ll use hard-coded data in this chapter.
+
+Add the following method to `Recipe` by replacing `// TODO: Add List<Recipe> here` with:
+
+```dart
+static List<Recipe> samples = [
+  Recipe(
+    'Spaghetti and Meatballs',
+    'assets/2126711929_ef763de2b3_w.jpg',
+  ),
+  Recipe(
+    'Tomato Soup',
+    'assets/27729023535_a57606c1be.jpg',
+  ),
+  Recipe(
+    'Grilled Cheese',
+    'assets/3187380632_5056654a19_b.jpg',
+  ),
+  Recipe(
+    'Chocolate Chip Cookies',
+    'assets/15992102771_b92f4cc00a_b.jpg',
+  ),
+  Recipe(
+    'Taco Salad',
+    'assets/8533381643_a31a99e8a6_c.jpg',
+  ),
+  Recipe(
+    'Hawaiian Pizza',
+    'assets/15452035777_294cefced5_c.jpg',
+  ),
+];
+```
+
+This is a hard-coded list of recipes. You’ll add more detail later, but right now, it’s just a list of names and images.
+
+```
+Note: A `List` is an ordered collection of items; in some programming languages, it’s called an array. List indexes start with 0.
+```
+
+You’ve created a List with images, but you don’t have any images in your project yet. To add them, go to **Finder** and copy the **assets** folder from the top level of **02-hello-flutter** in the book materials of your project’s folder structure. When you’re done, it should live at the same level as the **lib** folder. That way, the app will be able to find the images when you run it.
+
+You’ll notice that by copy-pasting in Finder, the folder and images automatically display in the Android Studio project list.
+
+![img23](https://github.com/CarlosViniMSouza/Book_Flutter_Apprentice/blob/master/LessonsBook/Images/img23.png)
+
+But just adding assets to the project doesn’t display them in the app. To tell the app to include those assets, open **pubspec.yaml** in the **recipes** project root folder.
+
+Under `# To add assets to your application...` add the following lines:
+
+```
+assets:
+  - assets/
+```
+
+These lines specify that assets/ is an assets folder and must be included with the app. Make sure that the first line here is aligned with the `uses-material-design: true` line above it.
