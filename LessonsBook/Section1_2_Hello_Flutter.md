@@ -76,3 +76,50 @@ For even bigger changes, like adding dependencies or assets, you need to a full 
 ```
 
 ![img20](https://github.com/CarlosViniMSouza/Book_Flutter_Apprentice/blob/master/LessonsBook/Images/img20.png)
+
+# Styling your app
+
+To continue making this into a new app, you’ll customize the appearance of your widgets next. Replace `RecipeApp`’s `build()` with:
+
+```dart
+// 1
+@override
+Widget build(BuildContext context) {
+  // 2
+  final ThemeData theme = ThemeData();
+  // 3
+  return MaterialApp(
+    // 4
+    title: 'Recipe Calculator',
+    // 5
+    theme: theme.copyWith(
+        colorScheme: theme.colorScheme.copyWith(
+            primary: Colors.grey,
+            secondary: Colors.black,
+        ),
+    ),
+    // 6
+    home: const MyHomePage(title: 'Recipe Calculator'),
+  );
+}
+```
+
+This code changes the appearance of the app:
+
+1 - A widget’s build() method is the entry point for composing together other widgets to make a new widget.
+
+2 - A theme determines visual aspects like color. The default ThemeData will show the standard Material defaults.
+
+3 - MaterialApp uses Material Design and is the widget that will be included in RecipeApp.
+
+4 - The title of the app is a description that the device uses to identify the app. The UI won’t display this.
+
+5 - By copying the theme and replacing the color scheme with an updated copy lets you change the app’s colors. Here, the primary color is Colors.grey and the secondary color is Colors.black.
+
+6 - This still uses the same MyHomePage widget as before, but now, you’ve updated the title and displayed it on the device.
+
+When you relaunch the app now, you’ll see the same widgets, but they have a more sophisticated style.
+
+![img21](https://github.com/CarlosViniMSouza/Book_Flutter_Apprentice/blob/master/LessonsBook/Images/img21.png)
+
+You’ve taken the first step towards making the app your own by customizing the `MaterialApp` body. You’ll finish cleaning up the app in the next section.
