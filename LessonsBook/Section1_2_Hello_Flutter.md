@@ -123,3 +123,44 @@ When you relaunch the app now, you’ll see the same widgets, but they have a mo
 ![img21](https://github.com/CarlosViniMSouza/Book_Flutter_Apprentice/blob/master/LessonsBook/Images/img21.png)
 
 You’ve taken the first step towards making the app your own by customizing the `MaterialApp` body. You’ll finish cleaning up the app in the next section.
+
+# Clearing the app
+
+You’ve themed the app, but it’s still displaying the counter demo. Clearing the screen is your next step. To start, replace the `_MyHomePageState` class with:
+
+```dart
+class _MyHomePageState extends State<MyHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    // 1
+    return Scaffold(
+      // 2
+      appBar: AppBar(
+        title: Text(widget.title),
+      ),
+      // 3
+      body: SafeArea(
+        // TODO: Replace child: Container()
+        // 4
+        child: Container(),
+        ),
+    );
+  }
+
+  // TODO: Add buildRecipeCard() here
+}
+```
+
+A quick look at what this shows:
+
+1 - A `Scaffold` provides the high-level structure for a screen. In this case, you’re using two properties.
+
+2 - `AppBar` gets a title property by using a `Text` widget that has a `title` passed in `from home: MyHomePage(title: 'Recipe Calculator')` in the previous step.
+
+3 - `body` has `SafeArea`, which keeps the app from getting too close to the operating system interfaces such as the notch or interactive areas like the Home Indicator at the bottom of some iOS screens.
+
+4 - `SafeArea` has a `child` widget, which is an empty `Container` widget.
+
+One hot reload later, and you’re left with a clean app:
+
+![img22](https://github.com/CarlosViniMSouza/Book_Flutter_Apprentice/blob/master/LessonsBook/Images/img22.png)
