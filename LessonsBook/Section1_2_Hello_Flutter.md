@@ -52,7 +52,7 @@ Since you’re building a recipe app, you don’t want your main `class` to be n
 
 While you could change it manually in multiple places, you’ll reduce the chance of a copy-and-paste error or typo by using the IDE’s **rename** action instead. This lets you rename a symbol at its definition and all its callers at the same time.
 
-In Android Studio, you’ll find this either under the **Refactor ▸ Rename menu** item or by right-clicking on `MyApp` in `class MyApp...` and navigating to **Refactor ▸ Rename**. Rename **MyApp** to be **RecipeApp**. The result will look like this:
+In Android Studio, you’ll find this either under the **Refactor ▸ Rename** menu item or by right-clicking on `MyApp` in `class MyApp...` and navigating to **Refactor ▸ Rename**. Rename **MyApp** to be **RecipeApp**. The result will look like this:
 
 ```dart
 void main() {
