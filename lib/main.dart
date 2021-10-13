@@ -48,19 +48,16 @@ class _MyHomePageState extends State<MyHomePage> {
       body: SafeArea(
         // TODO: Replace child: Container()
         // 4
-        child: Container(
-          child: ListView.builder(
-            // 5
-            itemCount: Recipe.samples.length,
-            // 6
-            itemBuilder: (BuildContext context, int index) {
-              // 7
-              // TODO: Update to return Recipe card
-              // TODO: Add GestureDetector
-              return buildRecipeCard(Recipe.samples[index]);
-              return Text(Recipe.samples[index].label);
-            },
-          ),
+        child: ListView.builder(
+          // 5
+          itemCount: Recipe.samples.length,
+          // 6
+          itemBuilder: (BuildContext context, int index) {
+            // 7
+            // TODO: Update to return Recipe card
+            // TODO: Add GestureDetector
+            return buildRecipeCard(Recipe.samples[index]);
+          },
         ),
       ),
     );
