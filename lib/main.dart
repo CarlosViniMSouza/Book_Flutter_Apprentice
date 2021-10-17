@@ -55,8 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
           itemBuilder: (BuildContext context, int index) {
             // 7
             // TODO: Update to return Recipe card
-            // TODO: Add GestureDetector
-            return buildRecipeCard(Recipe.samples[index]);
+            return Text(Recipe.samples[index].label);
           },
         ),
       ),

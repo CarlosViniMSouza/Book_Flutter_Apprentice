@@ -250,3 +250,26 @@ assets:
 ```
 
 These lines specify that assets/ is an assets folder and must be included with the app. Make sure that the first line here is aligned with the `uses-material-design: true` line above it.
+
+# Displaying the list
+
+With the data ready to go, your next step is to create a place for the data to go to.
+
+Back in *main.dart*, you need to import the data file so the code in *main.dart* can find it. Add the following to the top of the file, under the other import lines:
+
+```dart
+import 'recipe.dart';
+```
+
+Next, in `_MyHomePageState` `SafeArea’s` `child`, find and replace `// TODO: Replace child: Container()` and the two lines beneath it with:
+
+This code does the following:
+
+4 - Builds a list using `ListView`.
+5 - `itemCount` determines the number of rows the list has. In this case, `length` is the number of objects in the `Recipe.samples` list.
+6 - `itemBuilder` builds the widget tree for each row.
+7 - A `Text` widget displays the name of the recipe.
+
+Perform a hot reload now and you’ll see the following list:
+
+![img24](https://github.com/CarlosViniMSouza/Book_Flutter_Apprentice/blob/master/LessonsBook/Images/img24.png)
