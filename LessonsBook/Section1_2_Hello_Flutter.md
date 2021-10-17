@@ -273,3 +273,123 @@ This code does the following:
 Perform a hot reload now and you’ll see the following list:
 
 ![img24](https://github.com/CarlosViniMSouza/Book_Flutter_Apprentice/blob/master/LessonsBook/Images/img24.png)
+
+# Putting the list into a card
+
+It’s great that you’re displaying real data now, but this is barely an app. To spice things up a notch, you need to add images to go along with the titles.
+
+To do this, you’ll use a `Card`. In Material Design, `Cards` define an area of the UI where you’ve laid out related information about a specific entity. For example, a `Card` in a music app might have labels for an album’s title, artist and release date along with an image for the album cover and maybe a control for rating it with stars.
+
+Your recipe `Card` will show the recipe’s label and image. Its widget tree will have the following structure:
+
+![img25](https://github.com/CarlosViniMSouza/Book_Flutter_Apprentice/blob/master/LessonsBook/Images/img25.png)
+
+In *main.dart*, at the bottom of `_MyHomePageState` create a * custom widget* by replacing `// TODO: Add buildRecipeCard()` here with:
+
+```dart
+Widget buildRecipeCard(Recipe recipe) {
+  // 1
+  return Card(
+    // 2
+      child: Column(
+        // 3
+        children: <Widget>[
+          // 4
+          Image(image: AssetImage(recipe.imageUrl)),
+          // 5
+          Text(recipe.label),
+        ],
+      ),
+  );
+}
+```
+
+Here’s how you define your new custom `Card` widget:
+
+1 - You return a `Card` from `buildRecipeCard()`.
+2 - The `Card’s` child property is a `Column`. A `Column` is a widget that defines a vertical layout.
+3 - The `Column` has two `children`.
+4 - The first child is an `Image widget`. `AssetImage` states that the image is fetched from the local asset bundle defined in *pubspec.yaml*.
+5 - A `Text` widget is the second child. It will contain the `recipe.label` value.
+
+To use the card, go to `_MyHomePageState` and replace `// TODO: Update to return Recipe card` and the `return` line below it with this:
+
+```dart
+// TODO: Add GestureDetector
+return buildRecipeCard(Recipe.samples[index]);
+```
+
+That instructs the `itemBuilder` to use the custom `Card` widget for each recipe in the `samples` list.
+
+Hot restart the app to see the image and text cards.
+
+# Looking at the widget tree
+
+Now’s a good time to think about the widget tree of the overall app. Do you remember that it started with `RecipeApp` from `main()`?
+
+![img26](https://github.com/CarlosViniMSouza/Book_Flutter_Apprentice/blob/master/LessonsBook/Images/img26.png)
+
+`RecipeApp` built a `MaterialApp`, which in turn used `MyHomePage` as its home. That builds a `Scaffold` with an `AppBar` and a `ListView`. You then updated the `ListView` builder to make a `Card` for each item.
+
+Thinking about the widget tree helps explain the app as the layout gets more complicated and as you add interactivity. Fortunately, you don’t have to hand-draw a diagram each time.
+
+In Android Studio, open the *Flutter Inspector* from the *View ▸ Tool Windows ▸ Flutter Inspector* menu while your app is running. This opens a powerful UI debugging tool.
+
+![img27](https://github.com/CarlosViniMSouza/Book_Flutter_Apprentice/blob/master/LessonsBook/Images/img27.png)
+
+This view shows you all the widgets onscreen and how they are composed. As you scroll, you can refresh the tree. You might notice the number of cards change. That’s because the `List` doesn’t keep every item in memory at once to improve performance. You’ll cover more about how that works in a later chapter.
+
+# Making it look nice
+
+The default cards look okay, but they’re not as nice as they could be. With a few added extras, you can spiffy the card up. These include wrapping widgets in layout widgets like `Padding` or specifying additional styling parameters.
+
+Get started by replacing `buildRecipeCard()` with:
+
+```dart
+Widget buildRecipeCard(Recipe recipe) {
+  return Card(
+    // 1
+    elevation: 2.0,
+    // 2
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(10.0)),
+    // 3
+    child: Padding(
+      padding: const EdgeInsets.all(16.0),
+      // 4
+      child: Column(
+        children: <Widget>[
+          Image(image: AssetImage(recipe.imageUrl)),
+          // 5
+          const SizedBox(
+            height: 14.0,
+          ),
+          // 6
+          Text(
+            recipe.label,
+            style: const TextStyle(
+              fontSize: 20.0,
+              fontWeight: FontWeight.w700,
+              fontFamily: 'Palatino',
+            ),
+          )
+        ],
+      ),
+    ),
+  );
+}
+```
+
+This has a few updates to look at:
+
+1 - A card’s `elevation` determines _how high off the screen_ the card is, affecting its shadow.
+2 - `shape` handles the shape of the card. This code defines a rounded rectangle with a `10.0` corner radius.
+3 - `Padding` insets its child’s contents by the specified `padding` value.
+4 - The padding child is still the same vertical `Column` with the image and text.
+5 - Between the image and text is a `SizedBox`. This is a blank view with a fixed size.
+6 - You can customize `Text` widgets with a `style` object. In this case, you’ve specified a `Palatino` font with a size of `20.0` and a bold weight of `w700`.
+
+Hot reload and you’ll see a more styled list.
+
+![img28](https://github.com/CarlosViniMSouza/Book_Flutter_Apprentice/blob/master/LessonsBook/Images/img28.png)
+
