@@ -393,3 +393,18 @@ Hot reload and you’ll see a more styled list.
 
 ![img28](https://github.com/CarlosViniMSouza/Book_Flutter_Apprentice/blob/master/LessonsBook/Images/img28.png)
 
+You can play around with these values to get the list to look “just right” for you. With hot reload, it’s easy to make changes and instantly see their effect on the running app.
+
+Using the Widget inspector, you’ll see the added `Padding` and `SizedBox` widgets. When you select a widget, such as the `SizedBox`, it shows you all its real-time properties in a separate pane, which includes the ones you set explicitly and those that were inherited or set by default.
+
+Selecting a widget also highlights where it was defined in the source.
+
+![img29](https://github.com/CarlosViniMSouza/Book_Flutter_Apprentice/blob/master/LessonsBook/Images/img29.png)
+
+```
+Note: You may need to click the Refresh Tree button to reload the widget structure in the inspector. See Chapter 4, “Understanding Widgets” for more details.
+```
+
+# Adding a recipe detail page
+
+You now have a pretty list, but the app isn’t interactive yet. What would make it great is to show the user details about a recipe when they tap the card. You’ll start implementing this by making the card react to a tap.
