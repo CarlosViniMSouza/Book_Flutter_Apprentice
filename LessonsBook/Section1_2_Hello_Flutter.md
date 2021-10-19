@@ -255,7 +255,7 @@ These lines specify that assets/ is an assets folder and must be included with t
 
 With the data ready to go, your next step is to create a place for the data to go to.
 
-Back in *main.dart*, you need to import the data file so the code in *main.dart* can find it. Add the following to the top of the file, under the other import lines:
+Back in _main.dart_, you need to import the data file so the code in _main.dart_ can find it. Add the following to the top of the file, under the other import lines:
 
 ```dart
 import 'recipe.dart';
@@ -284,7 +284,7 @@ Your recipe `Card` will show the recipe’s label and image. Its widget tree wil
 
 ![img25](https://github.com/CarlosViniMSouza/Book_Flutter_Apprentice/blob/master/LessonsBook/Images/img25.png)
 
-In *main.dart*, at the bottom of `_MyHomePageState` create a * custom widget* by replacing `// TODO: Add buildRecipeCard()` here with:
+In _main.dart_, at the bottom of `_MyHomePageState` create a _ custom widget_ by replacing `// TODO: Add buildRecipeCard()` here with:
 
 ```dart
 Widget buildRecipeCard(Recipe recipe) {
@@ -309,7 +309,7 @@ Here’s how you define your new custom `Card` widget:
 1 - You return a `Card` from `buildRecipeCard()`.
 2 - The `Card’s` child property is a `Column`. A `Column` is a widget that defines a vertical layout.
 3 - The `Column` has two `children`.
-4 - The first child is an `Image widget`. `AssetImage` states that the image is fetched from the local asset bundle defined in *pubspec.yaml*.
+4 - The first child is an `Image widget`. `AssetImage` states that the image is fetched from the local asset bundle defined in _pubspec.yaml_.
 5 - A `Text` widget is the second child. It will contain the `recipe.label` value.
 
 To use the card, go to `_MyHomePageState` and replace `// TODO: Update to return Recipe card` and the `return` line below it with this:
@@ -333,7 +333,7 @@ Now’s a good time to think about the widget tree of the overall app. Do you re
 
 Thinking about the widget tree helps explain the app as the layout gets more complicated and as you add interactivity. Fortunately, you don’t have to hand-draw a diagram each time.
 
-In Android Studio, open the *Flutter Inspector* from the *View ▸ Tool Windows ▸ Flutter Inspector* menu while your app is running. This opens a powerful UI debugging tool.
+In Android Studio, open the _Flutter Inspector_ from the _View ▸ Tool Windows ▸ Flutter Inspector_ menu while your app is running. This opens a powerful UI debugging tool.
 
 ![img27](https://github.com/CarlosViniMSouza/Book_Flutter_Apprentice/blob/master/LessonsBook/Images/img27.png)
 
@@ -408,3 +408,72 @@ Note: You may need to click the Refresh Tree button to reload the widget structu
 # Adding a recipe detail page
 
 You now have a pretty list, but the app isn’t interactive yet. What would make it great is to show the user details about a recipe when they tap the card. You’ll start implementing this by making the card react to a tap.
+
+# Making a tap response
+
+Inside `_MyHomePageState`, locate `// TODO: Add GestureDetector` and replace the `return` statement beneath it with the following:
+
+```dart
+// 7
+return GestureDetector(
+  // 8
+  onTap: () {
+    // 9
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) {
+        // 10
+        // TODO: Replace return with return RecipeDetail()
+        return Text('Detail page');
+      },
+    ),
+   );
+  },
+  // 11
+  child: buildRecipeCard(Recipe.samples[index]),
+);
+
+```
+
+This introduces a few new widgets and concepts. Looking at the lines one at a time:
+
+7 - Introduces a `GestureDetector` widget, which, as the name implies, detects gestures.
+8 - Implements an `onTap` function, which is the callback called when the widget is tapped.
+9 - The `Navigator` widget manages a stack of pages. Calling `push()` with a `MaterialPageRoute` will push a new Material page onto the stack. Section III, “Navigating Between Screens”, will cover navigation in a lot more detail.
+10 - `builder` creates the destination page widget.
+11 - `GestureDetector’s` child widget defines the area where the gesture is active.
+
+Hot reload the app and now each card is tappable. _Tap_ a recipe and you’ll see a black _Detail page_:
+
+![img30](https://github.com/CarlosViniMSouza/Book_Flutter_Apprentice/blob/master/LessonsBook/Images/img30.png)
+
+# Creating an actual target page
+
+The resulting page is obviously just a placeholder. Not only is it ugly, but because it doesn’t have all the normal page trappings, the user is now stuck here, at least on iOS devices without a back button. But don’t worry, you can fix that!
+
+In _lib_, create a new _Dart file_ named _recipe_detail.dart_.
+
+Now, add this code to the file, ignore the red squiggles:
+
+```dart
+import 'package:flutter/material.dart';
+import 'recipe.dart';
+
+class RecipeDetail extends StatefulWidget {
+  final Recipe recipe;
+
+  const RecipeDetail({
+    Key? key,
+    required this.recipe,
+  }) : super(key: key);
+
+  @override
+  _RecipeDetailState createState() {
+    return _RecipeDetailState();
+  }
+}
+
+// TODO: Add _RecipeDetailState here
+
+```

@@ -56,7 +56,25 @@ class _MyHomePageState extends State<MyHomePage> {
             // 7
             // TODO: Update to return Recipe card
             // TODO: Add GestureDetector
-            return buildRecipeCard(Recipe.samples[index]);
+            // 7
+            return GestureDetector(
+              // 8
+              onTap: () {
+                // 9
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                    // 10
+                    // TODO: Replace return with return RecipeDetail()
+                    return Text('Detail page');
+                  },
+                ),
+              );
+              },
+              // 11
+              child: buildRecipeCard(Recipe.samples[index]),
+            );
           },
         ),
       ),
@@ -98,22 +116,22 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
 // 1
-@override
-Widget build(BuildContext context) {
-  // 2
-  final ThemeData theme = ThemeData();
-  // 3
-  return MaterialApp(
-    // 4
-    title: 'Recipe Calculator',
-    // 5
-    theme: theme.copyWith(
-      colorScheme: theme.colorScheme.copyWith(
-        primary: Colors.grey,
-        secondary: Colors.black,
+  @override
+  Widget build(BuildContext context) {
+    // 2
+    final ThemeData theme = ThemeData();
+    // 3
+    return MaterialApp(
+      // 4
+      title: 'Recipe Calculator',
+      // 5
+      theme: theme.copyWith(
+        colorScheme: theme.colorScheme.copyWith(
+          primary: Colors.grey,
+          secondary: Colors.black,
+        ),
       ),
-    ),
-    // 6
-    home: const MyHomePage(title: 'Recipe Calculator'),
-  );
-}
+      // 6
+      home: const MyHomePage(title: 'Recipe Calculator'),
+    );
+  }
