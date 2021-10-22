@@ -783,3 +783,51 @@ Slider(
 Hot reload the app, adjust the slider and see the value reflected in the indicator.
 
 ![img35](https://github.com/CarlosViniMSouza/Book_Flutter_Apprentice/blob/master/LessonsBook/Images/img35.png)
+
+# Updating the recipe
+
+It’s great to see the changed value reflected in the slider, but right now, it doesn’t affect the recipe itself.
+
+To do that, you just have to change the `Expanded` ingredients `itemBuilder` return statement to include the current value of `_sliderVal` as a factor for each ingredient.
+
+Replace `// TODO: Add ingredient.quantity` and the whole `return` statement beneath it with:
+
+```dart
+return Text('${ingredient.quantity * _sliderVal} '
+                      '${ingredient.measure} '
+                      '${ingredient.name}');
+```
+
+After a hot reload, you’ll see that the recipe’s ingredients change when you move the slider.
+
+![img36](https://github.com/CarlosViniMSouza/Book_Flutter_Apprentice/blob/master/LessonsBook/Images/img36.png)
+
+That’s it! You’ve now built a cool, interactive Flutter app that works just the same on iOS and Android.
+
+In the next few sections, you’ll continue to explore how widgets and state work. You’ll also learn about important functionality like networking.
+
+# Key points
+
+°Build a new app with `flutter create`.
+
+°Use widgets to compose a screen with controls and layout.
+
+°Use widget parameters for styling.
+
+°A `MaterialApp` widget specifies the app, and `Scaffold` specifies the high-level structure of a given screen.
+
+°State allows for interactive widgets.
+
+°When state changes, you usually need to hot restart the app instead of hot reload. In some case, you may also need to rebuild and restart the app entirely.
+
+# Where to go from here?
+
+Congratulations, you’ve written your first app!
+
+To get a sense of all the widget options available, the documentation at https://api.flutter.dev/ should be your starting point.
+In particular, the Material library https://api.flutter.dev/flutter/material/material-library.html and 
+
+Widgets library https://api.flutter.dev/flutter/widgets/widgets-library.html will cover most of what you can put onscreen.
+Those pages list all the parameters, and often have in-browser interactive sections where you can experiment.
+
+Chapter 3, “Basic Widgets”, is all about using widgets and Chapter 4, “Understanding Widgets”, goes into more detail on the theory behind widgets. Future chapters will go into more depth about other concepts briefly introduced in this chapter.
