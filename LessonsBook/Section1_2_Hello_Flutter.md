@@ -569,3 +569,165 @@ Note: You need to use hot restart here because hot reload won’t update the UI 
 Because you now have a `Scaffold` with an `appBar`, Flutter will automatically include a back button to return the user to the main list.
 
 # Adding ingredients
+
+To complete the detail page, you’ll need to add additional details to the `Recipe` class. Before you can do that, you have to add an ingredient list to the recipes.
+
+Open recipe.dart and replace `// TODO: Add Ingredient() here` with the following class:
+
+```dart
+class Ingredient {
+  double quantity;
+  String measure;
+  String name;
+
+  Ingredient(
+    this.quantity,
+    this.measure,
+    this.name,
+  );
+}
+```
+
+This is a simple data container for an ingredient. It has a name, a unit of measure — like “cup” or “tablespoon” — and a quantity.
+
+At the top of the `Recipe` class, replace `// TODO: Add servings and ingredients here` with the following:
+
+```dart
+int servings;
+List<Ingredient> ingredients;
+```
+
+This adds properties to specify that `serving` is how many people the specified quantity feeds and `ingredients` is a simple list.
+
+To use these new properties, go to your `samples` list inside the `Recipe` class and change the `Recipe` constructor from:
+
+```dart
+Recipe(
+  this.label,
+  this.imageUrl,
+);
+```
+
+to:
+
+```dart
+Recipe(
+  this.label,
+  this.imageUrl,
+  this.servings,
+  this.ingredients,
+);
+```
+
+You’ll see red squiggles under part of your code because the values for `servings` and `ingredients` have not been set. You’ll fix that next.
+
+![img32](https://github.com/CarlosViniMSouza/Book_Flutter_Apprentice/blob/master/LessonsBook/Images/img32.png)
+
+To include the new `servings` and `ingredients` properties, replace the existing `samples` definition with the following:
+
+```dart
+static List<Recipe> samples = [
+  Recipe(
+    'Spaghetti and Meatballs',
+    'assets/2126711929_ef763de2b3_w.jpg',
+    4,
+    [
+      Ingredient(1, 'box', 'Spaghetti',),
+      Ingredient(4, '', 'Frozen Meatballs',),
+      Ingredient(0.5, 'jar', 'sauce',),
+    ],
+  ),
+  Recipe(
+    'Tomato Soup',
+    'assets/27729023535_a57606c1be.jpg',
+    2,
+    [
+      Ingredient(1, 'can', 'Tomato Soup',),
+    ],
+  ),
+  Recipe(
+    'Grilled Cheese',
+    'assets/3187380632_5056654a19_b.jpg',
+    1,
+    [
+      Ingredient(2, 'slices', 'Cheese',),
+      Ingredient(2, 'slices', 'Bread',),
+    ],
+  ),
+  Recipe(
+    'Chocolate Chip Cookies',
+    'assets/15992102771_b92f4cc00a_b.jpg',
+    24,
+    [
+      Ingredient(4, 'cups', 'flour',),
+      Ingredient(2, 'cups', 'sugar',),
+      Ingredient(0.5, 'cups', 'chocolate chips',),
+    ],
+  ),
+  Recipe(
+    'Taco Salad',
+    'assets/8533381643_a31a99e8a6_c.jpg',
+    1,
+    [
+      Ingredient(4, 'oz', 'nachos',),
+      Ingredient(3, 'oz', 'taco meat',),
+      Ingredient(0.5, 'cup', 'cheese',),
+      Ingredient(0.25, 'cup', 'chopped tomatoes',),
+    ],
+  ),
+  Recipe(
+    'Hawaiian Pizza',
+    'assets/15452035777_294cefced5_c.jpg',
+    4,
+    [
+      Ingredient(1, 'item', 'pizza',),
+      Ingredient(1, 'cup', 'pineapple',),
+      Ingredient(8, 'oz', 'ham',),
+    ],
+  ),
+];
+```
+
+That fills out an ingredient list for these items. Please don’t cook these at home, these are just examples. :]
+
+Hot reload the app now. No changes will be visible, but it should build successfully.
+
+![img33](https://github.com/CarlosViniMSouza/Book_Flutter_Apprentice/blob/master/LessonsBook/Images/img33.png)
+
+# Showing the ingredients
+
+A recipe doesn’t do much good without the ingredients. Now, you’re ready to add a widget to display them.
+
+In recipe_detail.dart, replace `// TODO: Add Expanded` with:
+
+```dart
+// 7
+Expanded(
+  // 8
+  child: ListView.builder(
+    padding: const EdgeInsets.all(7.0),
+    itemCount: widget.recipe.ingredients.length,
+    itemBuilder: (BuildContext context, int index) {
+      final ingredient = widget.recipe.ingredients[index];
+      // 9
+      // TODO: Add ingredient.quantity
+      return Text(
+          '${ingredient.quantity} ${ingredient.measure} ${ingredient.name}');
+    },
+  ),
+),
+```
+
+This code adds:
+
+7 - An `Expanded` widget, which expands to fill the space in a `Column`. This way, the ingredient list will take up the space not filled by the other widgets.
+
+8 - A `ListView`, with one row per ingredient.
+
+9 - A `Text` that uses string interpolation to populate a string with runtime values. You use the `${expression}` syntax inside the string literal to denote these.
+
+Hot restart by choosing *Run ▸ Flutter Hot Restart* and navigate to a detail page to see the ingredients.
+
+![img34](https://github.com/CarlosViniMSouza/Book_Flutter_Apprentice/blob/master/LessonsBook/Images/img34.png)
+
+Nice job, the screen now shows the recipe name and the ingredients. Next, you’ll add a feature to make it interactive.
