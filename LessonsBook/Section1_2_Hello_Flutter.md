@@ -731,3 +731,55 @@ Hot restart by choosing *Run ▸ Flutter Hot Restart* and navigate to a detail p
 ![img34](https://github.com/CarlosViniMSouza/Book_Flutter_Apprentice/blob/master/LessonsBook/Images/img34.png)
 
 Nice job, the screen now shows the recipe name and the ingredients. Next, you’ll add a feature to make it interactive.
+
+# Adding a serving slider
+
+You’re currently showing the ingredients for a suggested serving. Wouldn’t it be great if you could change the desired quantity and have the amount of ingredients update automatically?
+
+You’ll do this by adding a *Slider* widget to allow the user to adjust the number of servings.
+
+First, create an instance variable to store the slider value at the top of `_RecipeDetailState` by replacing `// TODO: Add _sliderVal here`:
+
+```dart
+int _sliderVal = 1;
+```
+
+Now find `// TODO: Add Slider() here` replace it with the following:
+
+```dart
+Slider(
+  // 10
+  min: 1,
+  max: 10,
+  divisions: 10,
+  // 11
+  label: '${_sliderVal * widget.recipe.servings} servings',
+  // 12
+  value: _sliderVal.toDouble(),
+  // 13
+  onChanged: (newValue) {
+    setState(() {
+      _sliderVal = newValue.round();
+    });
+  },
+  // 14
+  activeColor: Colors.green,
+  inactiveColor: Colors.black,
+),
+```
+
+`Slider` presents a round thumb that can be dragged along a track to change a value. Here’s how it works:
+
+10 - You use `min`, `max` and `divisions` to define how the slider moves. In this case, it moves between the values of 1 and 10, with 10 discreet stops. That is, it can only have values of 1, 2, 3, 4, 5, 6, 7, 8, 9 or 10.
+
+11 - `label` updates as the `_sliderVal` changes and displays a scaled number of servings.
+
+12 - The slider works in `double` values, so this converts the `int` variable.
+
+13 - Conversely, when the slider changes, this uses `round()` to convert the `double` slider value to an `int`, then saves it in `_sliderVal`.
+
+14 - This sets the slider’s colors to something more “on brand”. The `activeColor` is the section between the minimum value and the thumb, and the `inactiveColor` represents the rest.
+
+Hot reload the app, adjust the slider and see the value reflected in the indicator.
+
+![img35](https://github.com/CarlosViniMSouza/Book_Flutter_Apprentice/blob/master/LessonsBook/Images/img35.png)
