@@ -524,3 +524,36 @@ class _RecipeDetailState extends State<RecipeDetail> {
   }
 }
 ```
+
+The body of the widget is the same as you’ve already seen. Here are a few things to notice:
+
+1 - `Scaffold` defines the page’s general structure.
+2 - In the `body`, there’s a `SafeArea`, a `Column` with a `Container`, a `SizedBox` and `Text` children.
+3 - `SafeArea` keeps the app from getting too close to the operating system interfaces, such as the notch or the interactive area of most iPhones.
+4 - One new thing is the `SizedBox` around the `Image`, which defines resizable bounds for the image. Here, the `height` is fixed at 300 but the `width` will adjust to fit the aspect ratio. The unit of measurement in Flutter is *logical pixels*.
+5 - There is a spacer `SizedBox`.
+6 - The `Text` for the `label` has a `style` that’s a little different than the main `Card`, to show you how much customizability is available.
+
+Next, go back to *main.dart* and add the following line to the top of the file:
+
+```dart
+import 'recipe_detail.dart';
+```
+
+Then find `// TODO: Replace return with return RecipeDetail()` replace it and the existing `return` statement with:
+
+```dart
+return RecipeDetail(recipe: Recipe.samples[index]);
+```
+
+Perform a hot restart by choosing *Run ▸ Flutter Hot Restart* from the menu to set the app state back to the original list. Tapping a recipe card will now show the `RecipeDetail` page.
+
+```
+Note: You need to use hot restart here because hot reload won’t update the UI after you update the state.
+```
+
+![img31](https://github.com/CarlosViniMSouza/Book_Flutter_Apprentice/blob/master/LessonsBook/Images/img31.png)
+
+Because you now have a `Scaffold` with an `appBar`, Flutter will automatically include a back button to return the user to the main list.
+
+# Adding ingredients
