@@ -384,6 +384,7 @@ Sometimes, saving the file does not automatically trigger the hot reload. In tha
 ° This book will mostly use **Android Studio** as the IDE for Flutter development.
 
 # Where to go from here?
+
 Your home for all things Flutter is **flutter.dev** (and **dart.dev** for the Dart language). If you get stuck at any of the installation steps, go there for updated instructions.
 
 **flutter.dev** contains the official documentation and reference pages, which you can find at https://flutter.dev/docs. These will be your source for complete and up-to-date information about the SDKs.
