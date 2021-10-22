@@ -475,5 +475,52 @@ class RecipeDetail extends StatefulWidget {
 }
 
 // TODO: Add _RecipeDetailState here
+```
 
+This creates a new `StatefulWidget` which has an initializer that takes the `Recipe` details to display. This is a `StatefulWidget` because you’ll add some interactive state to this page later.
+
+You need `_RecipeDetailState` to build the widget, replace `// TODO: Add _RecipeDetailState here` with:
+
+```dart
+class _RecipeDetailState extends State<RecipeDetail> {
+  // TODO: Add _sliderVal here
+
+  @override
+  Widget build(BuildContext context) {
+    // 1
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.recipe.label),
+      ),
+      // 2
+      body: SafeArea(
+        // 3
+        child: Column(
+          children: <Widget>[
+            // 4
+            SizedBox(
+              height: 300,
+              width: double.infinity,
+              child: Image(
+                image: AssetImage(widget.recipe.imageUrl),
+              ),
+            ),
+            // 5
+            const SizedBox(
+              height: 4,
+            ),
+            // 6
+            Text(
+              widget.recipe.label,
+              style: const TextStyle(fontSize: 18),
+            ),
+            // TODO: Add Expanded
+
+            // TODO: Add Slider() here
+          ],
+        ),
+      ),
+    );
+  }
+}
 ```
