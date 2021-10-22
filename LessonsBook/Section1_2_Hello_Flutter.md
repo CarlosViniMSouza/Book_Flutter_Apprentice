@@ -266,8 +266,11 @@ Next, in `_MyHomePageState` `SafeArea’s` `child`, find and replace `// TODO: R
 This code does the following:
 
 4 - Builds a list using `ListView`.
+
 5 - `itemCount` determines the number of rows the list has. In this case, `length` is the number of objects in the `Recipe.samples` list.
+
 6 - `itemBuilder` builds the widget tree for each row.
+
 7 - A `Text` widget displays the name of the recipe.
 
 Perform a hot reload now and you’ll see the following list:
@@ -383,10 +386,15 @@ Widget buildRecipeCard(Recipe recipe) {
 This has a few updates to look at:
 
 1 - A card’s `elevation` determines _how high off the screen_ the card is, affecting its shadow.
+
 2 - `shape` handles the shape of the card. This code defines a rounded rectangle with a `10.0` corner radius.
+
 3 - `Padding` insets its child’s contents by the specified `padding` value.
+
 4 - The padding child is still the same vertical `Column` with the image and text.
+
 5 - Between the image and text is a `SizedBox`. This is a blank view with a fixed size.
+
 6 - You can customize `Text` widgets with a `style` object. In this case, you’ve specified a `Palatino` font with a size of `20.0` and a bold weight of `w700`.
 
 Hot reload and you’ll see a more styled list.
@@ -439,9 +447,13 @@ return GestureDetector(
 This introduces a few new widgets and concepts. Looking at the lines one at a time:
 
 7 - Introduces a `GestureDetector` widget, which, as the name implies, detects gestures.
+
 8 - Implements an `onTap` function, which is the callback called when the widget is tapped.
+
 9 - The `Navigator` widget manages a stack of pages. Calling `push()` with a `MaterialPageRoute` will push a new Material page onto the stack. Section III, “Navigating Between Screens”, will cover navigation in a lot more detail.
+
 10 - `builder` creates the destination page widget.
+
 11 - `GestureDetector’s` child widget defines the area where the gesture is active.
 
 Hot reload the app and now each card is tappable. _Tap_ a recipe and you’ll see a black _Detail page_:
