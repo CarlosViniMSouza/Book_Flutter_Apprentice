@@ -235,3 +235,109 @@ This code does the following:
 4. Finally, it declares a static method, `dark`, which returns the color tones for a dark theme using the `darkTextTheme` you created in step 2.
 
 Your next step is to utilize the theme.
+
+# Using the theme
+
+In _main.dart_, import your theme by adding the following beneath the existing import statement:
+
+```dart
+import 'fooderlich_theme.dart';
+```
+
+Then replace the comment `//TODO: Create theme` with the following:
+
+```dart
+final theme = FooderlichTheme.dark();
+```
+
+To apply the new theme replace the comment `// TODO: Add theme` with the following:
+
+```dart
+theme: theme,
+```
+
+Next replace the comment `// TODO: Style the title` and the line below it with the following:
+
+```dart
+appBar: AppBar(
+          title: Text(
+            'Fooderlich',
+            style: theme.textTheme.headline6,
+          ),
+        ),
+```
+
+Finally, locate the comment `// TODO: Style the body text` and replace it and the code below it with the following:
+
+```dart
+body: Center(
+  child: Text('Let\'s get cooking 👩‍🍳',
+      style: theme.textTheme.headline1),
+),
+```
+
+After all your updates, your code should look like this:
+
+```dart
+// 1
+import 'fooderlich_theme.dart';
+
+void main() {
+  runApp(const Fooderlich());
+}
+
+class Fooderlich extends StatelessWidget {
+  const Fooderlich({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    // 2
+    final theme = FooderlichTheme.dark();
+    // TODO: Apply Home widget
+    return MaterialApp(
+      // 3
+      theme: theme,
+      title: 'Fooderlich',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Fooderlich',
+                      // 4
+                      style: theme.textTheme.headline6,
+                     ),
+        ),
+        body: Center(
+          child: Text('Let\'s get cooking 👩‍🍳',
+                      // 5
+                      style: theme.textTheme.headline1,
+                     ),
+        ),
+      ),
+    );
+  }
+}
+```
+
+To recap, your updates:
+
+1. Imported the `FooderlichTheme`.
+
+2. Defined a variable that holds the theme.
+
+3. Added the `MaterialApp` widget’s `theme` property.
+
+4. Added `AppBar` text styling.
+
+5. Finally, added `body` text styling.
+
+Save your changes. Thanks to hot reload, you’ll see the updated theme nearly immediately.
+
+![img41](https://github.com/CarlosViniMSouza/Book_Flutter_Apprentice/blob/master/LessonsBook/Images/img41.png)
+
+To see the difference between light and dark mode, change the theme between `FooderlichTheme.dark()` and `FooderlichTheme.light`(). The two themes look like this:
+
+```
+NOTE: It’s generally a good idea to establish a common theme object for your app — especially when you work with designers. That gives you a single source of truth to access your theme across all your widgets.
+```
+
+Next, you’ll learn about an important aspect of building an app — understanding which app structure to use.
+
+# App structure and navigation
