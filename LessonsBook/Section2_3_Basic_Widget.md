@@ -341,3 +341,28 @@ NOTE: It’s generally a good idea to establish a common theme object for your a
 Next, you’ll learn about an important aspect of building an app — understanding which app structure to use.
 
 # App structure and navigation
+
+Establishing your app’s structure from the beginning is important for the user experience. Applying the right navigation structure makes it easy for your users to navigate the information in your app.
+
+Fooderlich uses the `Scaffold` widget for its starting app structure. `Scaffold` is one of the most commonly-used Material widgets in Flutter. Next, you’ll learn how to implement it in your app.
+
+# Using Scaffold
+
+The Scaffold widget implements all your basic visual layout structure needs. It’s composed of the following parts:
+
+° AppBar
+° BottomSheet
+° BottomNavigationBar
+° Drawer
+° FloatingActionButton
+° SnackBar
+
+`Scaffold` has a lot of functionality out of the box!
+
+The following diagram represents some of the aforementioned items as well as showing left and right nav options:
+
+![img42](https://github.com/CarlosViniMSouza/Book_Flutter_Apprentice/blob/master/LessonsBook/Images/img42.png)
+
+For more information, check out Flutter’s documentation on *Material Components widgets*, including app structure and navigation: https://flutter.dev/docs/development/ui/widgets/material
+
+Now, it’s time to add more functionality.
