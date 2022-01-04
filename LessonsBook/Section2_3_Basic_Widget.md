@@ -366,3 +366,38 @@ The following diagram represents some of the aforementioned items as well as sho
 For more information, check out Flutter’s documentation on *Material Components widgets*, including app structure and navigation: https://flutter.dev/docs/development/ui/widgets/material
 
 Now, it’s time to add more functionality.
+
+## Setting up the Home widget
+
+As you build large-scale apps, you’ll start to compose a staircase of widgets. Widgets composed of other widgets can get really long and messy. It’s a good idea to break your widgets into separate files for readability.
+
+To avoid making your code overly complicated, you’ll create the first of these separate files now.
+
+`Scaffold` needs to handle some state changes, via a *StatefulWidget*. Your next step is to move code out of *main.dart* into a new `StatefulWidget` named `Home`.
+
+Most of the `Scaffold` code looks like what you have in main.dart, but there are a few changes:
+
+1 - Your new class extends `StatefulWidget`.
+
+2 - The `AppBar` style now reads: `Theme.of(context).textTheme.headline6` instead of: `theme.textTheme.headline6.` `Theme.of(context)` returns the nearest `Theme` in the widget tree. If the widget has a defined `Theme`, it returns that. Otherwise, it returns the app’s theme.
+
+3 - As with the `AppBar`, you’ve also updated the `Text` style to use the `Theme.of(context)`.
+
+Go back to *main.dart*, which you need to update so it can use the new Home widget. At the top, add the following import statement:
+
+```dart
+import 'home.dart';
+```
+
+Next replace `// TODO: Apply Home widget` and all the `return MaterialApp()` code below it with the following:
+
+```dart
+return MaterialApp(
+  theme: theme,
+  title: 'Fooderlich',
+  home: const Home(),
+);
+
+```
+
+With that done, you’ll move on to addressing `Scaffold`’s bottom navigation.

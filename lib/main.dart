@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'recipe.dart';
+import 'home.dart';
 
 void main() {
   runApp(const RecipeApp());
@@ -121,17 +122,10 @@ Widget build(BuildContext context) {
   final ThemeData theme = ThemeData();
   // 3
   return MaterialApp(
-    // 4
-    title: 'Recipe Calculator',
-    // 5
-    theme: theme.copyWith(
-      colorScheme: theme.colorScheme.copyWith(
-        primary: Colors.grey,
-        secondary: Colors.black,
-      ),
-    ),
-    // 6
-    home: const MyHomePage(title: 'Recipe Calculator'),
+    theme: theme,
+    title: 'Fooderlich',
+    home: const Home(),
   );
+
 }
 
