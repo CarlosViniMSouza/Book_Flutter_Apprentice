@@ -1,4 +1,4 @@
-![simbol_restart_project]()
+![simbol_restart_project](https://github.com/CarlosViniMSouza/Book_Flutter_Apprentice/blob/master/assets/BookFlutter_Accept.jpg)
 
 # Flutter Apprentice Book
 
